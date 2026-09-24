@@ -1,6 +1,6 @@
 {
   "name": "preserve-frontmatter-formatting",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Keeps the formatting of your YAML front matter - comments, quoting, blank lines, indentation and inline lists - when any plugin edits a property.",
   "keywords": [
     "obsidian",
