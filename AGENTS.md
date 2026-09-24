@@ -44,10 +44,9 @@ Four frames — `images/screenshots/screenshot-desktop-{1,2}.png` at 1200x800 an
 
 **The decision, 2026-09-24.** The plugin renders nothing, so the frames are of what it changes: the stored TEXT of one hand-formatted note, in **Source mode** (Live Preview shows the Properties table, which hides every character this plugin keeps), after a real `app.fileManager.processFrontMatter()` write made exactly as another plugin would make it. Desktop puts two copies side by side — left written with this plugin disabled, right with it enabled — once for a write that sets `status: done` and once for a read-only callback. A phone cannot hold two panes, so the mobile pair splits the same comparison across its two frames. Captions were measured with `measureLabelCaption`, not counted.
 
-## Traps to clear before the first release
+## Traps
 
-- **The plugin id `preserve-frontmatter-formatting` can never be renamed once the community registry lists it.** It was chosen by the owner and checked free against the registry on 2026-09-23; check again at submission.
-- **The GitHub remote does not exist yet**, so every `github.com/mnaoumov/obsidian-preserve-frontmatter-formatting` link fails `lint:md`'s link check until it does. That is the only expected red gate.
+- **The plugin id `preserve-frontmatter-formatting` can never be renamed once the community registry lists it.** It was chosen by the owner and checked free against the registry on 2026-09-24, right before the 1.0.0 submission.
 - **The demo-vault asset is `preserve-frontmatter-formatting-demo-vault.zip`, unversioned**, and it unzips into one `preserve-frontmatter-formatting-demo-vault-<version>` folder.
 - **`scripts/version.ts` carries no template-release guard, and must stay that way.**
 - **The `obsidian-integration-testing` entry in `package.json`'s `overrides` is what makes `npm install` work here at all — do not tidy it away.** `pinned-versions.json` carries the reasoning and a mechanical check that flips the day it can go.
