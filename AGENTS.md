@@ -37,7 +37,12 @@ Plugins in this workspace share one architecture; intentional deviations are doc
 
 - **No settings, no settings tab, no `src/plugin-settings*.ts`.** The plugin's enabled state is the only switch, by the owner's decision: installing it is the consent. The demo-vault coverage suite is registered with `rootFolder` alone accordingly.
 - **No `src/styles/`.** The plugin renders nothing, so no empty `styles.css` asset is produced.
-- **No screenshots yet.** The README carries no screenshot block until a capture suite exists; it is owed before the first release.
+
+## Screenshots
+
+Four frames — `images/screenshots/screenshot-desktop-{1,2}.png` at 1200x800 and `screenshot-mobile-{1,2}.png` at 900x1600 — captured by `src/screenshots.desktop-capture.integration.test.ts` and `src/screenshots.android-capture.integration.test.ts`, and written **only** by `npm run capture:screenshots`. Their `*-capture.` infix matches none of the standard project globs on purpose, so `npm run test:integration` never rewrites the PNGs. The mobile pair needs the `obsidian_screenshots` AVD (see `scripts/vitest-config.ts`).
+
+**The decision, 2026-09-24.** The plugin renders nothing, so the frames are of what it changes: the stored TEXT of one hand-formatted note, in **Source mode** (Live Preview shows the Properties table, which hides every character this plugin keeps), after a real `app.fileManager.processFrontMatter()` write made exactly as another plugin would make it. Desktop puts two copies side by side — left written with this plugin disabled, right with it enabled — once for a write that sets `status: done` and once for a read-only callback. A phone cannot hold two panes, so the mobile pair splits the same comparison across its two frames. Captions were measured with `measureLabelCaption`, not counted.
 
 ## Traps to clear before the first release
 

@@ -6,6 +6,23 @@
 
 With this plugin enabled, a property change rewrites only the property that changed, and a change that changes nothing writes nothing. It covers every plugin that edits front matter through `app.fileManager.processFrontMatter()`, which includes some of Obsidian's own edits, and every plugin built on [`obsidian-dev-utils`](https://github.com/mnaoumov/obsidian-dev-utils). There are no settings: installing the plugin is the switch, and disabling it gives you Obsidian's own behavior back.
 
+<!-- markdownlint-disable MD033 -->
+
+<a href="https://github.com/mnaoumov/obsidian-preserve-frontmatter-formatting/blob/HEAD/images/screenshots/screenshot-desktop-1.png"><img src="images/screenshots/screenshot-desktop-1.png" alt="A plugin sets status: done. Left: Obsidian. Right: this plugin" width="600"></a>
+
+<details>
+<summary>More screenshots</summary>
+
+<div>
+<a href="https://github.com/mnaoumov/obsidian-preserve-frontmatter-formatting/blob/HEAD/images/screenshots/screenshot-desktop-2.png"><img src="images/screenshots/screenshot-desktop-2.png" alt="A read-only plugin. Left: rewritten anyway. Right: kept" width="600"></a>
+<a href="https://github.com/mnaoumov/obsidian-preserve-frontmatter-formatting/blob/HEAD/images/screenshots/screenshot-mobile-1.png"><img src="images/screenshots/screenshot-mobile-1.png" alt="A plugin sets status: done. Nothing else in the note moves" width="270"></a>
+<a href="https://github.com/mnaoumov/obsidian-preserve-frontmatter-formatting/blob/HEAD/images/screenshots/screenshot-mobile-2.png"><img src="images/screenshots/screenshot-mobile-2.png" alt="The same change without it: comments and quotes gone" width="270"></a>
+</div>
+
+</details>
+
+<!-- markdownlint-enable MD033 -->
+
 ## Demo vault
 
 **The documentation is a demo vault.** Its notes explain what changes and why, with buttons that edit a sample note's properties the same way other plugins do, so you can compare the stored text with the plugin on and off.
