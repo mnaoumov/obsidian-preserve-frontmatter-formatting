@@ -1,0 +1,37 @@
+{
+  "extends": "@tsconfig/strictest/tsconfig.json",
+  "compilerOptions": {
+    "allowArbitraryExtensions": true,
+    "allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2022"
+    ],
+    "libReplacement": true,
+    "module": "node16",
+    "moduleResolution": "node16",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "target": "es2022",
+    "types": [
+      "@obsidian-typings/obsidian-public-latest",
+      "@total-typescript/ts-reset",
+      "node"
+    ],
+    "verbatimModuleSyntax": true
+  },
+  "include": [
+    "./.markdownlint-cli2.mts",
+    "./commitlint.config.ts",
+    "./eslint.config.mts",
+    "./src/**/*.ts",
+    "./scripts/**/*.ts",
+    "./vitest.config.ts"
+  ]
+}

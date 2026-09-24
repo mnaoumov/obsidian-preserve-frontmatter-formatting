@@ -1,0 +1,10 @@
+{
+  "author": "mnaoumov",
+  "authorUrl": "https://github.com/mnaoumov/",
+  "description": "Keeps the formatting of your YAML front matter - comments, quoting, blank lines, indentation and inline lists - when any plugin edits a property.",
+  "fundingUrl": "https://www.buymeacoffee.com/mnaoumov",
+  "id": "preserve-frontmatter-formatting",
+  "isDesktopOnly": false,
+  "name": "Preserve Frontmatter Formatting",
+  "version": "0.0.0"
+}
