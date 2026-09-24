@@ -22,6 +22,7 @@
     "build": "jiti scripts/build.ts",
     "build:clean": "jiti scripts/build-clean.ts",
     "build:compile": "jiti scripts/build-compile.ts",
+    "capture:screenshots": "jiti scripts/capture-screenshots.ts",
     "commit": "jiti scripts/commit.ts",
     "dev": "jiti scripts/dev.ts",
     "find-overexposed": "jiti scripts/find-overexposed.ts",
@@ -75,6 +76,7 @@
     "obsidian-dev-utils": "^105.2.0",
     "obsidian-integration-testing": "^15.0.0",
     "obsidian-test-mocks": "^5.1.0",
+    "sharp": "^0.35.4",
     "vitest": "^5.0.0"
   }
 }

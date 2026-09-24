@@ -4,6 +4,34 @@ import type { TestProjectConfiguration } from 'vitest/config';
 import { defineObsidianPluginVitestConfig } from 'obsidian-dev-utils/script-utils/test-runners/vitest-config';
 
 /**
+ * The screenshot-capture suites that write `images/screenshots/screenshot-*.png`.
+ *
+ * Named `*.desktop-capture.` / `*.android-capture.` rather than `*.desktop.` / `*.android.` so they match
+ * NONE of the standard project globs. That keeps them out of `npm run test:integration` entirely —
+ * capturing is an explicit operation (`npm run capture:screenshots`), not something every test run does.
+ * Folding them into the standard projects would rewrite the PNGs on every run and dirty the tree
+ * mid-release.
+ */
+const DESKTOP_CAPTURE_TEST_FILES = 'src/**/*.desktop-capture.integration.test.ts';
+const ANDROID_CAPTURE_TEST_FILES = 'src/**/*.android-capture.integration.test.ts';
+
+/**
+ * The AVD the mobile shots are taken on: 900x1600 at density 320, exactly the size the community store
+ * asks for, so the capture needs no crop, no rescale and no letterbox. The shared `obsidian_test` AVD is a
+ * Pixel 10 Pro XL and cannot produce it; resizing that one at runtime destroys the Appium session, because
+ * the display change recreates the activity and with it the WebView the session is attached to.
+ */
+const SCREENSHOT_AVD_NAME = 'obsidian_screenshots';
+
+const APPIUM_URL = 'http://localhost:4723';
+
+/**
+ * This AVD is cold-booted and rarely used, so Obsidian's first layout on it is far slower than on the
+ * well-warmed shared one; the 90s default expires while it is still starting up.
+ */
+const LAYOUT_READY_TIMEOUT_IN_MILLISECONDS = 240_000;
+
+/**
  * The demo-vault button suite. It drives a real desktop Obsidian like the desktop project, but opens
  * a copy of the in-repo `demo-vault/` rather than an empty vault — hence its own `globalSetup` — and
  * needs its own suffix so the desktop project does not also collect it and open it against a vault
@@ -22,6 +50,28 @@ const DEMO_VAULT_TIMEOUT_IN_MILLISECONDS = 600_000;
 export const config = defineObsidianPluginVitestConfig({
   customProjects(context: ObsidianPluginVitestConfigContext): TestProjectConfiguration[] {
     return [
+      {
+        test: {
+          ...context.desktop,
+          include: [DESKTOP_CAPTURE_TEST_FILES],
+          name: 'capture-screenshots:desktop'
+        }
+      },
+      {
+        test: {
+          ...context.android,
+          environmentOptions: {
+            obsidianTransport: {
+              appiumUrl: APPIUM_URL,
+              avdName: SCREENSHOT_AVD_NAME,
+              layoutReadyTimeoutInMilliseconds: LAYOUT_READY_TIMEOUT_IN_MILLISECONDS,
+              type: 'obsidian-android-appium'
+            }
+          },
+          include: [ANDROID_CAPTURE_TEST_FILES],
+          name: 'capture-screenshots:android'
+        }
+      },
       {
         test: {
           ...context.desktop,
