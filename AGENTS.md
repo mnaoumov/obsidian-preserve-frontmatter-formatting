@@ -49,4 +49,3 @@ Four frames — `images/screenshots/screenshot-desktop-{1,2}.png` at 1200x800 an
 - **The plugin id `preserve-frontmatter-formatting` can never be renamed once the community registry lists it.** It was chosen by the owner and checked free against the registry on 2026-09-24, right before the 1.0.0 submission.
 - **The demo-vault asset is `preserve-frontmatter-formatting-demo-vault.zip`, unversioned**, and it unzips into one `preserve-frontmatter-formatting-demo-vault-<version>` folder.
 - **`scripts/version.ts` carries no template-release guard, and must stay that way.**
-- **The `obsidian-integration-testing` entry in `package.json`'s `overrides` is what makes `npm install` work here at all — do not tidy it away.** `pinned-versions.json` carries the reasoning and a mechanical check that flips the day it can go.
