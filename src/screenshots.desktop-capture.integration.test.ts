@@ -30,6 +30,7 @@ import {
 import { join } from 'node:path';
 import process from 'node:process';
 import {
+  applyObsidianTheme,
   captureObsidianScreenshot,
   evalInObsidian,
   labelScreenshot,
@@ -88,11 +89,15 @@ const TEST_TIMEOUT_IN_MILLISECONDS = 120_000;
 const IMAGES_DIRECTORY = join(process.cwd(), 'images', 'screenshots');
 
 beforeAll(async () => {
+  // Shot in the default DARK theme, like the author's other plugins. Not a bare `app.changeTheme`: that only
+  // schedules the config save, and a config reload landing first drops the theme and shoots every frame light.
+  // `applyObsidianTheme` saves at once, and `captureObsidianScreenshot` then refuses any frame that has left it.
+  await applyObsidianTheme({ theme: 'dark', vaultPath: vaultPath() });
+
   await evalInObsidian({
     async callback({ app }) {
       const SETTLE_DELAY_IN_MILLISECONDS = 1000;
 
-      app.changeTheme('obsidian');
       // The notes are the picture: both sidebars would only take width from them.
       app.workspace.leftSplit.collapse();
       app.workspace.rightSplit.collapse();
