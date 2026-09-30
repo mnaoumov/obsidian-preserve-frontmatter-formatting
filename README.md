@@ -52,7 +52,7 @@ A value that **does** change is written in the default style, so a changed quote
 
 ## Installation
 
-The plugin is not yet listed in [the official Community Plugins repository](https://community.obsidian.md/plugins). Until it is, install it as a beta release.
+The plugin is available in [the official Community Plugins repository](https://community.obsidian.md/plugins/preserve-frontmatter-formatting).
 
 ### Beta versions
 
