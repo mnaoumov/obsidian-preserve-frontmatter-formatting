@@ -4,7 +4,7 @@
 
 **Keeps your YAML front matter the way you wrote it when a plugin changes a property.** When any plugin edits a property of a note in [Obsidian](https://obsidian.md/), even through the documented API, Obsidian rewrites the note's whole front matter block. Comments disappear, quotes are dropped, blank lines go, and inline lists such as `[a, b]` are expanded to one item per line. That happens to every property in the block, including the ones the plugin never touched, and even when it changed nothing at all.
 
-With this plugin enabled, a property change rewrites only the property that changed, and a change that changes nothing writes nothing. It covers every plugin that edits front matter through `app.fileManager.processFrontMatter()`, which includes some of Obsidian's own edits, and every plugin built on [`obsidian-dev-utils`](https://github.com/mnaoumov/obsidian-dev-utils). There are no settings: installing the plugin is the switch, and disabling it gives you Obsidian's own behavior back.
+With this plugin enabled, a property change rewrites only the property that changed, and a change that changes nothing writes nothing. It covers every plugin that edits front matter through `app.fileManager.processFrontMatter()`, which includes some of Obsidian's own edits, and every plugin built on [`@mnaoumov/obsidian-lib`](https://github.com/mnaoumov/obsidian-lib) or its predecessor [`obsidian-dev-utils`](https://github.com/mnaoumov/obsidian-dev-utils). There are no settings: installing the plugin is the switch, and disabling it gives you Obsidian's own behavior back.
 
 <!-- markdownlint-disable MD033 -->
 
@@ -39,7 +39,7 @@ A copy of the vault ships with every release. You can access it via any of the f
 
 - **Only the changed property is rewritten.** Every other line of the block keeps its exact characters: comments, including the spacing before them, single and double quotes, blank lines, indentation, inline `[a, b]` lists, and folded or literal text. [01 Edit a property from any plugin](<./demo-vault/01 Edit a property from any plugin.md>)
 - **A change that changes nothing writes nothing.** Obsidian rewrites the block even when a plugin only reads the properties, so a plugin that merely looks at your front matter can reformat it. With this plugin enabled, the note is left as it was. [01 Edit a property from any plugin](<./demo-vault/01 Edit a property from any plugin.md>)
-- **It covers plugins without their cooperation.** Plugins that call `app.fileManager.processFrontMatter()` are covered by a patch of that method. Plugins built on `obsidian-dev-utils` from 105.2.0 onwards write front matter through their own copy of the library, and this plugin switches that copy's formatting-preserving mode on for as long as it is enabled.
+- **It covers plugins without their cooperation.** Plugins that call `app.fileManager.processFrontMatter()` are covered by a patch of that method. Plugins built on `@mnaoumov/obsidian-lib`, or on `obsidian-dev-utils` from 105.2.0 onwards, write front matter through their own copy of the library, and this plugin switches that copy's formatting-preserving mode on for as long as it is enabled.
 
 A value that **does** change is written in the default style, so a changed quoted string comes back unquoted, the same as Obsidian would write it.
 

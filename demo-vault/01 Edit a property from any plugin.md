@@ -44,7 +44,7 @@ With this plugin enabled the note is left byte for byte as it was.
 ## Which plugins it covers
 
 - **Plugins that call `app.fileManager.processFrontMatter()`**, which is the documented API and what most plugins use.
-- **Plugins built on `obsidian-dev-utils`**, which write front matter through their own copy of that library. They are covered while this plugin is enabled, with no change on their side. This needs a copy of the library from 105.2.0 onwards.
+- **Plugins built on `@mnaoumov/obsidian-lib` or `obsidian-dev-utils`**, which write front matter through their own copy of that library. They are covered while this plugin is enabled, with no change on their side. For `obsidian-dev-utils` this needs a copy from 105.2.0 onwards.
 
 It does not cover a plugin that writes the note's text itself, bypassing both.
 
