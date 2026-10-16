@@ -3,9 +3,9 @@ import type {
   TFile
 } from 'obsidian';
 
-import { noop } from 'obsidian-dev-utils/function';
-import { getPrototypeOf } from 'obsidian-dev-utils/object-utils';
-import { setFrontmatter } from 'obsidian-dev-utils/obsidian/frontmatter';
+import { setFrontmatter } from '@mnaoumov/obsidian-lib/frontmatter';
+import { noop } from '@mnaoumov/typescript-lib/function';
+import { getPrototypeOf } from '@mnaoumov/typescript-lib/object-utils';
 import { App } from 'obsidian-test-mocks/obsidian';
 import {
   beforeEach,
@@ -76,7 +76,7 @@ describe('FrontmatterFormattingComponent', () => {
     originalSpy.mockRestore();
   });
 
-  it('should route obsidian-dev-utils front matter writes through the engine while loaded, and stop on unload', () => {
+  it('should route library front matter writes through the engine while loaded, and stop on unload', () => {
     const component = new FrontmatterFormattingComponent({ app });
     component.load();
 

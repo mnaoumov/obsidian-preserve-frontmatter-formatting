@@ -2,7 +2,7 @@
  * @file
  *
  * The content transform behind the patched `FileManager.processFrontMatter()`: the same contract as Obsidian's own,
- * with the write routed through `obsidian-dev-utils`' `setFrontmatter()`, which splices the change into the block
+ * with the write routed through `@mnaoumov/obsidian-lib`' `setFrontmatter()`, which splices the change into the block
  * instead of writing all of it out again.
  *
  * Obsidian's own transform, read out of `obsidian.asar/app.js`, is a dozen lines and is mirrored here step by step:
@@ -11,14 +11,14 @@
  * block when there was none. Only the write step is new, plus one guard.
  */
 
-import type { GenericObject } from 'obsidian-dev-utils/type-guards';
+import type { GenericObject } from '@mnaoumov/typescript-lib/type-guards';
 
+import { setFrontmatter } from '@mnaoumov/obsidian-lib/frontmatter';
+import { isDeepEqual } from '@mnaoumov/typescript-lib/object-utils';
 import {
   getFrontMatterInfo,
   parseYaml
 } from 'obsidian';
-import { isDeepEqual } from 'obsidian-dev-utils/object-utils';
-import { setFrontmatter } from 'obsidian-dev-utils/obsidian/frontmatter';
 
 /**
  * The callback `FileManager.processFrontMatter()` takes: it mutates the front matter object in place.

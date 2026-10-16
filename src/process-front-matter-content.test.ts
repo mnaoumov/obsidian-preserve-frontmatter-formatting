@@ -1,5 +1,5 @@
-import { parseFrontmatter } from 'obsidian-dev-utils/obsidian/frontmatter';
-import { enableFrontmatterFormattingPreservation } from 'obsidian-dev-utils/obsidian/frontmatter-formatting';
+import { parseFrontmatter } from '@mnaoumov/obsidian-lib/frontmatter';
+import { enableFrontmatterFormattingPreservation } from '@mnaoumov/obsidian-lib/frontmatter-formatting';
 import {
   beforeEach,
   describe,
@@ -13,7 +13,7 @@ const BODY = 'Body text\n';
 
 describe('processFrontMatterContent', () => {
   beforeEach(() => {
-    // The component registers the engine before this transform is ever reached; `obsidian-dev-utils/vitest-setup`
+    // The component registers the engine before this transform is ever reached; `@mnaoumov/obsidian-dev-toolkit/vitest-setup`
     // resets the registration between tests.
     enableFrontmatterFormattingPreservation();
   });
