@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Preserve Frontmatter Formatting makes every front matter write in the vault keep the author's formatting — comments, quoting, blank lines, indentation, inline versus block sequences — by routing it through `obsidian-dev-utils`' CST-splice engine (`obsidian-dev-utils/obsidian/frontmatter-formatting`). It has no settings and no commands beyond the shared **Open demo vault** one. **Installing it is the consent**: nobody's writes change without an install, and disabling it reverses everything.
+`Preserve Frontmatter Formatting` makes every front matter write in the vault keep the author's formatting — comments, quoting, blank lines, indentation, inline versus block sequences — by routing it through `obsidian-dev-utils`' CST-splice engine (`obsidian-dev-utils/obsidian/frontmatter-formatting`). It has no settings and no commands beyond the shared **Open demo vault** one. **Installing it is the consent**: nobody's writes change without an install, and disabling it reverses everything.
 
 The plugin is deliberately thin. The engine, its fallback guarantee and its differential fuzz all live in `obsidian-dev-utils`, and changes to how a block is spliced belong there, not here. This repo owns the two routes into that engine, and the contract of Obsidian's own method.
 
