@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 1.0.2
+
+- refactor: merge the move off obsidian-dev-utils onto the @mnaoumov packages
+- docs: merge plugin names marked as code
+- docs(readme): merge the community directory installation line
+
 ## 1.0.1
 
 - test(screenshots): move the desktop capture onto applyObsidianTheme
