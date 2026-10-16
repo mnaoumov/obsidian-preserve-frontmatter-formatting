@@ -19,7 +19,7 @@ The button calls `app.fileManager.processFrontMatter()` exactly as any other plu
 
 Manual equivalent: change **status** in the note's **Properties** view.
 
-To see what Obsidian does on its own, disable **Preserve Frontmatter Formatting** in **Settings -> Community plugins** and press the button again. The block comes back reformatted: no comments, no quotes, one tag per line. Put the note back the way it was with:
+To see what Obsidian does on its own, disable `Preserve Frontmatter Formatting` in **Settings -> Community plugins** and press the button again. The block comes back reformatted: no comments, no quotes, one tag per line. Put the note back the way it was with:
 
 ```code-button
 ---
