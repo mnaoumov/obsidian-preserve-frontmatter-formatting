@@ -31,7 +31,7 @@ With this plugin enabled, a property change rewrites only the property that chan
 
 A copy of the vault ships with every release. You can access it via any of the following:
 
-1. Running the **Preserve Frontmatter Formatting: Open demo vault** command.
+1. Running the **`Preserve Frontmatter Formatting`: Open demo vault** command.
 2. Downloading `preserve-frontmatter-formatting-demo-vault.zip` from the [Releases](https://github.com/mnaoumov/obsidian-preserve-frontmatter-formatting/releases). It unzips into a single `preserve-frontmatter-formatting-demo-vault-<version>` folder.
 3. Browsing its source in [`demo-vault/`](./demo-vault/README.md) in this repository.
 
