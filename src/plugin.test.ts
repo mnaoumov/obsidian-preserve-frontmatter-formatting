@@ -62,8 +62,6 @@ describe('Plugin', () => {
     appMock = App.createConfigured__();
     app = appMock.asOriginalType__();
 
-    // The real PluginBase reads dev-utils state off the app (and the global app).
-    seedOnRawTarget(app, 'obsidianDevUtilsState', {});
     seedOnRawTarget(app.workspace, 'onLayoutReady', () => {
       // The wrapper test never fires layout-ready; the child component is a stub.
     });

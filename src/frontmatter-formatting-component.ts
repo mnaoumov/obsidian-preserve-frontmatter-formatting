@@ -20,8 +20,8 @@ import { processFrontMatterContent } from './process-front-matter-content.ts';
 /**
  * The token this plugin's `processFrontMatter` patch carries.
  *
- * A `Symbol.for` token, so any plugin bundling its own copy of `@mnaoumov/obsidian-lib` or `obsidian-dev-utils` can find it on the method it is
- * about to wrap and defer to this one rather than race it.
+ * A `Symbol.for` token, so any plugin bundling its own copy of `@mnaoumov/obsidian-lib` can find it on the method it is about to wrap
+ * and defer to this one rather than race it.
  */
 export const PROCESS_FRONT_MATTER_PATCH_TOKEN = Symbol.for('preserve-frontmatter-formatting:processFrontMatter');
 
@@ -40,9 +40,9 @@ export interface FrontmatterFormattingComponentConstructorParams {
  *
  * Front matter reaches disk by two routes, and each needs its own half:
  *
- * - **Plugins built on `@mnaoumov/obsidian-lib` or `obsidian-dev-utils`** never call Obsidian's `processFrontMatter()`: the library reimplements
+ * - **Plugins built on `@mnaoumov/obsidian-lib`** never call Obsidian's `processFrontMatter()`: the library reimplements
  *   it, and writes through its own `setFrontmatter()`. That function consults a formatting preserver held in the
- *   library's realm-wide state bag on `globalThis`, which every bundled copy of either library shares — so registering
+ *   library's realm-wide state bag on `globalThis`, which every bundled copy of the library from 6.0.0 on shares — so registering
  *   the engine ONCE, here, reaches every such plugin in the vault, including ones that never heard of this plugin.
  * - **Every other plugin** calls `app.fileManager.processFrontMatter()`, which is patched here onto the same engine.
  *
