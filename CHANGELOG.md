@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## 1.0.3
+
+- build(deps): move to obsidian-lib 6 and obsidian-dev-toolkit 5
+- docs: shorten the debugging section
+- chore: replace leftover obsidian-dev-utils references with @mnaoumov/obsidian-lib
+- docs(readme): lead the Debugging section with `Advanced Debug Mode`
+- build(deps): float brace-expansion, sharp and fast-uri past their advisories
+- docs: mark plugin names as code
+- chore(github): point questions to Discussions from the new-issue page
+- ci: attest release assets through obsidian-dev-toolkit's reusable workflow
+
 ## 1.0.2
 
 - refactor: merge the move off obsidian-dev-utils onto the @mnaoumov packages
