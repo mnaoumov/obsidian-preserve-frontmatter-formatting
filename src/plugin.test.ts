@@ -31,6 +31,7 @@ const PLUGIN_ID = 'preserve-frontmatter-formatting';
 const STRICT_PROXY_TARGET_SYMBOL = Symbol.for('strictProxyTarget');
 
 interface AppGlobal {
+  // eslint-disable-next-line typescript-dev-toolkit/readonly-interface-members -- Test setup replaces the global app and teardown restores it.
   app: AppType;
 }
 
@@ -39,11 +40,12 @@ interface FrontmatterFormattingComponentConstructorParams {
 }
 
 interface LoadedFlagHolder {
+  // eslint-disable-next-line typescript-dev-toolkit/readonly-interface-members -- Tests set the mock lifecycle flag before unloading the plugin.
   loaded__: boolean;
 }
 
 interface ObsidianModule {
-  Component: new () => object;
+  readonly Component: new () => object;
 }
 
 const manifest = castTo<PluginManifest>({
