@@ -50,9 +50,13 @@ A value that **does** change is written in the default style, so a changed quote
 - **It replaces `processFrontMatter()` for Markdown files rather than wrapping it**, because the formatting is lost inside that method, where a wrapper cannot reach. Another plugin that patched the same method **before** this one loaded is therefore not called for Markdown files; one that patches it **after** wraps this plugin as usual.
 - **It keeps comments as well as the `yaml` library can place them, which is not perfectly.** That library documents its own comment handling as not completely stable, in particular for trailing comments. Comments on lines the change does not reach are never re-emitted at all, so they are safe. A comment beside a property that is removed or rewritten may go with it.
 
-## Similar plugins
+## See also
 
-- [`yaml-comments`](https://github.com/alangrainger/obsidian-yaml-comments) — not in the community store, installed through BRAT, and describes itself as a starting point rather than a finished plugin. It also patches `processFrontMatter()`, but lets Obsidian rewrite the block and then puts whole-line comments back above their keys, so inline comments, quoting, blank lines and inline lists are still rewritten, and plugins built on `@mnaoumov/obsidian-lib` are not covered.
+[My other Obsidian resources](https://github.com/mnaoumov/obsidian-resources)
+
+| Plugin | Features | How `Preserve Frontmatter Formatting` differs |
+| --- | --- | --- |
+| [`yaml-comments`](https://github.com/alangrainger/obsidian-yaml-comments) | Unlisted BRAT starter; restores whole-line comments after `processFrontMatter()` | Same preservation goal; also preserves inline comments, quotes, whitespace and lists; covers `obsidian-lib` writes |
 
 Last searched for similar plugins on 2026-10-26.
 
@@ -89,10 +93,6 @@ Contributions are welcome — see [CONTRIBUTING](./CONTRIBUTING.md) to get set u
 <a href="https://www.buymeacoffee.com/mnaoumov" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="60" width="217"></a>
 
 <!-- markdownlint-enable MD033 -->
-
-## My other Obsidian resources
-
-[See my other Obsidian resources](https://github.com/mnaoumov/obsidian-resources).
 
 ## License
 
