@@ -23,6 +23,7 @@
  * every test run does.
  */
 
+import dedent from 'dedent';
 import {
   mkdirSync,
   writeFileSync
@@ -63,20 +64,19 @@ const PLUGIN_ID = 'preserve-frontmatter-formatting';
  * Hand-formatted the way people actually keep front matter: a heading comment, a trailing comment, deliberate
  * quotes, an inline list and a blank line. Obsidian's own rewrite changes every one of those.
  */
-const FORMATTED_NOTE = [
-  '---',
-  '# Recipe card: kept by hand, edited by plugins.',
-  'title: "Blueberry pancakes"',
-  'tags: [breakfast, sweet]   # inline on purpose',
-  '',
-  'servings: 4',
-  'prep: \'15 min\'',
-  'status: draft',
-  '---',
-  '',
-  'Mix, rest for ten minutes, fry.',
-  ''
-].join('\n');
+const FORMATTED_NOTE = dedent`
+  ---
+  # Recipe card: kept by hand, edited by plugins.
+  title: "Blueberry pancakes"
+  tags: [breakfast, sweet]   # inline on purpose
+
+  servings: 4
+  prep: '15 min'
+  status: draft
+  ---
+
+  Mix, rest for ten minutes, fry.\n
+`;
 
 const WITHOUT_PLUGIN_NOTE_PATH = 'Without the plugin.md';
 const WITH_PLUGIN_NOTE_PATH = 'With the plugin.md';

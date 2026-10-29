@@ -23,6 +23,7 @@
  * every test run does.
  */
 
+import dedent from 'dedent';
 import {
   mkdirSync,
   writeFileSync
@@ -50,20 +51,19 @@ const PLUGIN_ID = 'preserve-frontmatter-formatting';
 /*
  * The same note the desktop pair photographs, so the two halves of the set show one story rather than two.
  */
-const FORMATTED_NOTE = [
-  '---',
-  '# Recipe card: kept by hand, edited by plugins.',
-  'title: "Blueberry pancakes"',
-  'tags: [breakfast, sweet]   # inline on purpose',
-  '',
-  'servings: 4',
-  'prep: \'15 min\'',
-  'status: draft',
-  '---',
-  '',
-  'Mix, rest for ten minutes, fry.',
-  ''
-].join('\n');
+const FORMATTED_NOTE = dedent`
+  ---
+  # Recipe card: kept by hand, edited by plugins.
+  title: "Blueberry pancakes"
+  tags: [breakfast, sweet]   # inline on purpose
+
+  servings: 4
+  prep: '15 min'
+  status: draft
+  ---
+
+  Mix, rest for ten minutes, fry.\n
+`;
 
 const WIDTH_IN_PIXELS = 900;
 const HEIGHT_IN_PIXELS = 1600;
