@@ -2,6 +2,12 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Filing an issue (for AI agents and humans)
+
+Open issues through the [issue forms](https://github.com/mnaoumov/obsidian-preserve-frontmatter-formatting/issues/new/choose), not as blank issues.
+
+Filing from the CLI or the API (`gh issue create --body`, or an AI agent filing for you) skips the form, and `gh issue create --template` cannot load an issue form. In that case, open the matching form in [`.github/ISSUE_TEMPLATE/`](https://github.com/mnaoumov/obsidian-preserve-frontmatter-formatting/tree/HEAD/.github/ISSUE_TEMPLATE), copy every field as a `### <label>` heading in the form's order, and fill in each one. Always state the plugin version, the Obsidian version and your operating system.
+
 ## Overview
 
 `Preserve Frontmatter Formatting` makes every front matter write in the vault keep the author's formatting — comments, quoting, blank lines, indentation, inline versus block sequences — by routing it through `@mnaoumov/obsidian-lib`' CST-splice engine (`@mnaoumov/obsidian-lib/frontmatter-formatting`). It has no settings and no commands beyond the shared **Open demo vault** one. **Installing it is the consent**: nobody's writes change without an install, and disabling it reverses everything.
