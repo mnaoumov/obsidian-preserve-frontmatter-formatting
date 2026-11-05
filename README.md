@@ -27,7 +27,7 @@ With this plugin enabled, a property change rewrites only the property that chan
 
 **The documentation is a demo vault.** Its notes explain what changes and why, with buttons that edit a sample note's properties the same way other plugins do, so you can compare the stored text with the plugin on and off.
 
-**[Start reading here](<./demo-vault/00 Start.md>)** — it is plain markdown, so it works on GitHub with nothing installed.
+**[Start reading here](<./demo-vault/00 Start.md>)** — it is plain markdown, so it works on `GitHub` with nothing installed.
 
 A copy of the vault ships with every release. You can access it via any of the following:
 
